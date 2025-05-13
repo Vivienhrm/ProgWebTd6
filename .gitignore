@@ -1,0 +1,13 @@
+# Dossiers à ignorer
+node_modules/
+dist/
+
+# Fichiers à ignorer
+*.log
+.DS_Store
+.env
+.git
+
+# Fichiers de build
+bundle.js
+out.js
