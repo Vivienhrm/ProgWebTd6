@@ -11,6 +11,7 @@ export const loadPicture = async (idPicture) => {
     }
     
     const data = await response.json();
+    console.log('Loaded picture data:', data);
     return data;
   } catch (error) {
     console.error('Error loading picture:', error);

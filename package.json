@@ -4,7 +4,9 @@
     "handlebars": "^4.7.8"
   },
   "scripts": {
-    "build": "esbuild js/index.js --bundle --target=es2015 --outfile=dist/out.js",
-    "dev": "esbuild js/index.js --bundle --target=es2015 --outfile=dist/out.js --watch"
+    "build": "esbuild js/index.js --bundle --sourcemap --target=es2015 --outfile=dist/out.js",
+    "dev": "esbuild js/index.js --bundle --sourcemap --target=es2015 --outfile=dist/out.js --watch",
+    "test": "http-server --port 8080 --cors --verbose --index index.html"
+    
   }
 }
