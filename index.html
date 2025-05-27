@@ -18,9 +18,26 @@
     <h4>{{photo.titre}}</h4>
     <p>{{photo.description}}</p>
     <p>{{photo.type}}, {{photo.dimension.width}} x {{photo.dimension.height}}</p>
-    <h4 id="la_categorie">Catégorie : <a href="{{links.categorie.href}}">Voir la catégorie</a></h4>
-    <h4>Commentaires : <a href="{{links.comments.href}}">Voir les commentaires</a></h4>
+    <!-- <h4 id="la_categorie">Catégorie : <a href="{{links.categorie.href}}">Voir la catégorie</a></h4>
+    <h4>Commentaires : <a href="{{links.comments.href}}">Voir les commentaires</a></h4> -->
+    <h4 id="la_categorie">Catégorie : </h4>
+    <h4>Commentaires :</h4>
+    <ul id="les_commentaires"></ul>
 </script>
+<script id="categoryTemplate" type="text/x-handlebars-template">
+    Catégorie : {{nom}}
+</script>
+<script id="commentsTemplate" type="text/x-handlebars-template">
+    <!-- <li>
+        <h4>{{commentaire.titre}}</h4>
+        <p>{{commentaire.contenu}}</p>
+        <p>Posté par {{commentaire.auteur}} le {{commentaire.date}}</p>
+    </li> -->
+    {{#each this}}
+        <li>{{pseudo}} : {{content}}</li>
+    {{/each}}
+</script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>

@@ -4,17 +4,6 @@ export const displayPicture = (photoData) => {
     const compiledTemplate = Handlebars.compile(template);
     
     try {
-        // // Check if photoData is valid
-        // if (!photoData || !photoData.photo || !photoData.photo.url || !photoData.photo.url.href) {
-        //     console.error('Invalid photo data structure:', photoData);
-        //     throw new Error('Invalid photo data');
-        // }
-
-
-        // // Ensure URL is properly formatted
-        // if (photoData.photo.url && !photoData.photo.url.startsWith('http')) {
-        //     photoData.photo.url = `https://webetu.iutnc.univ-lorraine.fr${photoData.photo.url}`;
-        // }
         // Clean and construct proper URL
         const baseUrl = 'https://webetu.iutnc.univ-lorraine.fr';
         
@@ -47,4 +36,35 @@ export const displayPicture = (photoData) => {
         console.error('Error displaying picture:', error);
         photoContainer.innerHTML = `<p>Error loading photo: ${error.message}</p>`;
     }
+};
+
+export const displayCategory = (categoryData) => {
+    const categoryElement = document.querySelector('#la_categorie');
+    const template = document.querySelector('#categoryTemplate').innerHTML;
+    const compiledTemplate = Handlebars.compile(template);
+    if (categoryElement) {
+        // categoryElement.innerHTML = compiledTemplate(categoryData);
+        const catName = {nom: categoryData.categorie.nom};
+        categoryElement.innerHTML = compiledTemplate(catName);
+    }
+};
+
+export const displayComments = (commentsData) => {
+    // const commentsList = document.querySelector('#les_commentaires');
+    // const template = document.querySelector('#commentsTemplate').innerHTML;
+    // const compiledTemplate = Handlebars.compile(template);
+
+    // if (commentsList) {
+    //     commentsList.innerHTML = compiledTemplate(commentsData);
+    // }
+    const commentsList = document.querySelector('#les_commentaires');
+    if (!commentsList) {
+        console.error('Element #les_commentaires not found in the DOM.');
+        return;
+    }
+
+    const template = document.querySelector('#commentsTemplate').innerHTML;
+    const compiledTemplate = Handlebars.compile(template);
+
+    commentsList.innerHTML = compiledTemplate(commentsData);
 };
