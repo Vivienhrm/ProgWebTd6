@@ -11,3 +11,4 @@ dist/
 # Fichiers de build
 bundle.js
 out.js
+*.txt
