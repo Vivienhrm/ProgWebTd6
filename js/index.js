@@ -62,6 +62,13 @@ document.querySelector('#loadGalleryButton').addEventListener('click', async () 
     }
 });
 
+window.addEventListener('hashchange', () => {
+    const photoId = window.location.hash.substr(1);
+    if (photoId) {
+        getPicture(photoId);
+    }
+});
+
 function updatePaginationButtons(links) {
     const buttons = {
         first_page: document.getElementById("first_page"),
