@@ -37,3 +37,15 @@ export const loadResource = async (uri) => {
         throw error;
     }
 };
+
+
+// export const loadPictures = async () => {
+//     try {
+//         const photosData = await loadResource(`${API_URL}/photos`);
+//         console.log('Loaded photos data:', photosData);
+//         return photosData;
+//     } catch (error) {
+//         console.error('Error loading photos:', error);
+//         throw error;
+//     }
+// };

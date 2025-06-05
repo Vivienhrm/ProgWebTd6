@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>index td8 : fetch</title>
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 <main id="photo">
@@ -37,6 +38,29 @@
         <li>{{pseudo}} : {{content}}</li>
     {{/each}}
 </script>
+
+<div id="pagination">
+    <h4>Pagination</h4>
+    <button id="first_page" class="pagination-button">
+        <i class="fas fa-angle-double-left"></i> 
+        Premier
+    </button>
+    <button id="prev_page" class="pagination-button">
+        <i class="fas fa-angle-left"></i> 
+        Précédent
+    </button>
+    <button id="next_page" class="pagination-button">
+        Suivant 
+        <i class="fas fa-angle-right"></i>
+    </button>
+    <button id="last_page" class="pagination-button">
+        Dernier 
+        <i class="fas fa-angle-double-right"></i>
+    </button>
+</div>
+<button id="loadGalleryButton">Charger la galerie</button>
+<section id="gallery">
+</section>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
